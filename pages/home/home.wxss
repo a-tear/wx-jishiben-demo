@@ -1,0 +1,49 @@
+.todos {
+  border-top: 1px solid #eee;
+}
+
+.header {
+  display: flex;
+  margin: 10rpx 20rpx;
+  align-items: center;
+  border: 1px solid #eee;
+}
+
+.header .add {
+  margin-top: -10rpx;
+  font-size: 80rpx;
+}
+
+.content {
+
+  margin: 20rpx;
+  border: 1px solid #eee;
+}
+
+.content .items {
+  display: flex;
+  border-bottom: 1px solid #eee;
+}
+
+.content .items:last-child {
+  border: 0;
+}
+
+.content .items .info {
+  flex: 1;
+  color: #444;
+  margin-left: 10rpx;
+}
+
+.content .items.active .info {
+  color: #888;
+  text-decoration: line-through;
+}
+
+.footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 20rpx;
+  font-size: 30rpx;
+
+}

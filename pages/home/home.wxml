@@ -1,0 +1,20 @@
+<view class="todos">
+  <view class='header'>
+    <text class='add' bindtap='addInfo'>+</text>
+    <input bindinput='getInfo' bindconfirm='addInfo' type="text" placeholder='请输入内容' value="{{info}}"></input>
+  </view>
+  <block wx:if="{{list.length}}">
+    <view class="content">
+      <view bindtap='changeStatus' data-index="{{index}}" class="items{{ item.status ? ' active':''}}" wx:for="{{list}}" wx:key="index">
+        <icon type="{{ item.status ? 'success' :'circle' }}" />
+        <text class="info">{{item.name}}</text>
+        <icon catchtap='delInfo' type="clear" data-index="{{index}}"></icon>
+      </view>
+    </view>
+    <view class="footer">
+      <text bindtap='chooseAll'>toggle all</text>
+      <text wx:if="{{leftCount}}">{{leftCount}} {{leftCount>1? 'items':'item'}} left</text>
+      <text bindtap='clearComplated'>clear complated</text>
+    </view>
+  </block>
+</view>
